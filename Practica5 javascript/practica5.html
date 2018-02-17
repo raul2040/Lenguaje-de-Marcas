@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="página de horarios del FP superior de programación web"/>
+    <meta name="keywords" content="html5, css"/>
+    <title>HORARIOS FP DAW</title>
+    <link rel="stylesheet" href="practica5.css"/>
+    <script src="practica5.js"></script>  
+</head>
+<body>
+        <h2 align="center" >FP DUAL DE PROGRAMACIÓN WEB</h2>
+            <p align="center">
+             En esta web será presentado el horario oficial correspondiente al FP DUAL de programación web, que ofrecemos en el 
+            IES Francesc De Borja Moll.
+            </p>
+        <h1  align="center">Horario escolar curso 2017-2018 DAW-DUAL</h1>
+  
+        <table align="center" border="15" bordercolor="white" cellpadding="10" cellspacing="20">
+            <tr bgcolor="white">
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Mi&eacute;rcoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+            <tr  bgcolor="orange" >
+                <td bgcolor="white" >15:45-16:40</td>
+                <td class="BD" onmouseover="changeBD('BD')" onmouseout="defaultBD('BD')" onclick="infoBD(this)">Base de Datos</td>
+                <td class="SI" onmouseover="changeSI('SI')" onmouseout="defaultSI('SI')" onclick="infoSI(this)">Sistemas Informáticos</td>
+                <td class="SI" onmouseover="changeSI('SI')" onmouseout="defaultSI('SI')" onclick="infoSI(this)">Sistemas Informáticos</td>
+                <td class="PR" onmouseover="changePR('PR')" onmouseout="defaultPR('PR')" onclick="infoPR(this)">programación</td>
+                <td class="BD" onmouseover="changeBD('BD')" onmouseout="defaultBD('BD')" onclick="infoBD(this)">Base de Datos</td>
+            </tr>
+            <tr  bgcolor="orange">
+                <td bgcolor="white">16:40-17:35</td>
+                <td class="LM" onmouseover="changeLM('LM')" onmouseout="defaultLM('LM')" onclick="infoLM(this)">Lenguaje de Marcas</td>
+                <td class="ED" onmouseover="changeED('ED')" onmouseout="defaultED('ED')" onclick="infoED(this)">Entornos Desarrollo</td>
+                <td class="FOL" onmouseover="changeFOL('FOL')" onmouseout="defaultFOL('FOL')" onclick="infoFOL(this)">FOL</td>
+                <td class="PR" onmouseover="changePR('PR')" onmouseout="defaultPR('PR')" onclick="infoPR(this)">programación</td>
+                <td class="BD" onmouseover="changeBD('BD')" onmouseout="defaultBD('BD')" onclick="infoBD(this)">Base de Datos</td>
+            </tr>
+            <tr bgcolor="orange">
+                <td bgcolor="white">17:35-18:30</td>
+                <td class="LM" onmouseover="changeLM('LM')" onmouseout="defaultLM('LM')" onclick="infoLM(this)">Lenguaje de Marcas</td>
+                <td class="PR" onmouseover="changePR('PR')" onmouseout="defaultPR('PR')" onclick="infoPR(this)">programación</td>
+                <td class="FOL" onmouseover="changeFOL('FOL')" onmouseout="defaultFOL('FOL')" onclick="infoFOL(this)">FOL</td>
+                <td class="PR" onmouseover="changePR('PR')" onmouseout="defaultPR('PR')" onclick="infoPR(this)">programación</td>
+                <td class="BD" onmouseover="changeBD('BD')" onmouseout="defaultBD('BD')" onclick="infoBD(this)">Base de Datos</td>
+            </tr>
+            <tr>
+        </table>
+    <div>
+        <div id="BD"> Asignatura: Base de Datos</div>
+        <div id="LM" >Asignatura: Lenguaje de Marcas</div>
+        <div id="PR"> Asignatura: Programación</div>
+        <div id="ED"> Asignatura: Entornos de Desarrollo</div>
+        <div id="SI"> Asignatura: Sistemas Informáticos</div>
+        <div id="FOL"> Asignatura: Formación y Orientación Laboral</div>
+    </div>
+</body>

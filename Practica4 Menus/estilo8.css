@@ -1,0 +1,215 @@
+body{
+    background-color:rgba(0, 0, 0, 0.432);
+    margin:150px ;
+    font-family:
+}
+main{
+    display:inline;
+    margin:30px;
+}
+h1{
+    background-color: rgb(25, 0, 255);
+    margin:20px;
+    color:#FFFFFF;
+    font-size:25px;
+    text-align:center;
+    border-top-left-radius:80%;
+    border-top-right-radius:80%;
+}
+
+img {
+width:800px;height:400px;
+float:right;
+margin:15px;
+}
+p{
+    margin:40px;
+	font-size:20px;
+	color:rgb(0, 0, 0);
+}
+/* unvisited link */
+a:link {
+    color: #FF0000;
+    }
+    
+    /* visited link */
+    a:visited {
+    color: rgb(255, 255, 255);
+    }
+    
+    /* mouse over link */
+    a:hover {
+    color: rgb(4, 0, 255);
+    }
+    
+    /* selected link */
+    a:active {
+    color: rgb(0, 4, 255);
+    }
+
+/*Estilos de la galeria*/
+
+.galeria {
+	width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 20px;
+	box-sizing: border-box;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.galeria li {
+	margin: 5px;
+}
+
+.galeria img {
+	width: 650px;
+	height: 500px;
+}
+
+/*Estilos del modal*/
+
+.modal {
+	display: none;
+}
+
+.modal:target {
+	
+	display: block;
+	position: fixed;
+	background: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.modal h3 {
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	margin: 15px 0;
+}
+
+.imagen {
+	width: 100%;
+	height: 50%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagen b {
+	color: #fff;
+	font-size: 40px;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.imagen b:nth-child(2) {
+	margin: 0;
+	height: 100%;
+	flex-shrink: 2;
+}
+
+.imagen img {
+	width: 500px;
+	height: 100%;
+	max-width: 100%;
+	border: 7px solid #fff;
+	box-sizing: border-box;
+}
+
+.cerrar {
+	display: block;
+	background: #fff;
+	width: 25px;
+	height: 25px;
+	margin: 15px auto;
+	text-align: center;
+	text-decoration: none;
+	font-size: 25px;
+	color: #000;
+	padding: 5px;
+	border-radius: 50%;
+	line-height: 25px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(25, 0, 255);
+
+    
+}
+
+li {
+    float: left;
+}
+
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(253, 0, 0);
+    color: white;
+}
+    .active {
+        background-color: rgb(0, 255, 157);
+        color: rgb(255, 0, 0);}
+	/* Change the link color on hover */
+	#marcadores{
+		margin: 20px auto 0;
+		padding: 5px 0 0 0;
+		width: 240px;
+		height: 120px;
+		}
+		#marcadores li1 {
+		list-style-type: none;
+		margin : 0;
+		padding: 0;
+		float: left;
+		}
+		#marcadores li1 a{
+		background: url(http://4.bp.blogspot.com/-063Xsp75qOY/TbeA0johGtI/AAAAAAAAFvY/UYDlwDYKEU4/s1600/marcadores-tuto3.png) no-repeat 0 0;
+		margin: 40px;
+		padding: 0;
+		display: block;
+		width:  60px; /*El ancho del bloque con el icono*/
+		height:  60px; /*El alto del bloque con el icono*/
+		}
+		#marcadores li1 a.rss{
+		background-position: 0 0; /*posición del icono del feed o RSS*/
+		}
+		#marcadores li1 a.twitter{
+		background-position: -60px 0; /*posición del icono de Twitter*/
+		}
+		#marcadores li1 a.facebook {
+		background-position: -120px 0; /*posición del icono de Facebook*/
+		}
+		#marcadores li1 a.youtube {
+		background-position: -180px 0; /*posición del icono de Youtube*/
+		}
+		#marcadores li1 a.rss:hover{
+		background-position: 0 -60px; /*posición del ícono del Feed del efecto hover*/
+		}
+		#marcadores li1 a.twitter:hover{
+		background-position: -60px -60px; /*posición del icono de Twitter del efecto hover*/
+		}
+		#marcadores li1 a.facebook:hover {
+		background-position: -120px -60px; /*posición del icono de facebook del efecto hover*/
+		}
+		#marcadores li a.youtube:hover {
+		background-position: -180px -60px; /*posición del icono de youtube del efecto hover*/
+		}
