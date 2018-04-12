@@ -2,13 +2,13 @@
 
 <questions>
 
-    <question id="p001">
+    <question id="quest1">
 		<type>text</type>
 			<title>1.- ¿Java es un lenguaje de programación enfocado en el paradigma orientado en objetos?</title>
 			<answer>si</answer>
     </question>
 
-    <question id="p002">
+    <question id="quest2">
 		<type>select</type>
 			<title>2.-  ¿Cual es el lenguaje de programación más usado en la actualidad?</title>
 				<option>a) Python</option>
@@ -18,7 +18,7 @@
 				<answer>2</answer>
     </question>
 
-    <question id="p003">
+    <question id="quest3">
 		<type>checkbox</type>
 			<title>3.- ¿Para que se usa un bucle en programación?</title>
 				<option>a) Para iterar sobre un objeto o una colección de datos</option>
@@ -28,7 +28,7 @@
 				<answer>2</answer>
     </question>
 
-	<question id="p004">
+	<question id="quest4">
 		<type>multiple</type>
 			<title>4.- ¿Python es un lenguaje de programación orientado a que tipo de paradigma?</title>
 				<option>a) Imperativa </option>
@@ -39,7 +39,7 @@
 				<answer>2</answer>
     </question>
 
-	<question id="p005">
+	<question id="quest5">
 		<type>radio</type>
 			<title>5.- Int,char,float,string y boolean son:</title>
 				<option>a) Funciones de acceso a datos </option>
@@ -49,13 +49,13 @@
 				<answer>2</answer>
     </question>
 
-	<question id="p006">
+	<question id="quest6">
 		<type>text</type>
 			<title>6.- ¿Es Git el único sistema de control de versiones existente?</title>
 			<answer>no</answer>
     </question>
 
-	<question id="p007">
+	<question id="quest7">
 		<type>select</type>
 			<title>7.- if, else, for y while son </title>
 				<option>a) Funciones de acceso a datos</option>
@@ -65,7 +65,7 @@
 				<answer>1</answer>
 	</question>
 
-	<question id="p008">
+	<question id="quest8">
 		<type>checkbox</type>
 			<title>8.- Python es... </title>
 				<option>a) Un lenguaje no tipado</option>
@@ -76,7 +76,7 @@
 				<answer>2</answer>
 	</question>
 
-	<question id="p009">
+	<question id="quest9">
 		<type>multiple</type>
 			<title>9.- Imperativo, declarativo y orientado a objetos son</title>
 				<option>a) Modos de compilar el código fuente de un programa de ordenador</option>
@@ -87,7 +87,7 @@
 				<answer>3</answer>
 	</question>
 
-	<question id="p010">
+	<question id="quest10">
 		<type>radio</type>
 		<title>10.-¿Cuál es el código ASCII decimal de "nueva línea" (line feed)? </title>
 		<option>a) 10 </option>
