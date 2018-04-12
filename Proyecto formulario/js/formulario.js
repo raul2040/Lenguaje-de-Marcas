@@ -1,5 +1,5 @@
 var xmlDoc;
-var numPreguntas = 0;
+var numquestions = 0;
 var correccion = "";
 
 window.onload = function () {
@@ -13,9 +13,9 @@ function leerXML() {
         if (this.readyState == 4 && this.status == 200) {
 
             xmlDoc = this.responseXML;
-            numPreguntas = xmlDoc.getElementsByTagName('pregunta').length;
+            numquestions = xmlDoc.getElementsByTagName('question').length;
 
-            imprimirPreguntas();
+            imprimirquestions();
             imprimirBoton();
         }
     };
@@ -23,11 +23,11 @@ function leerXML() {
     xhttp.send();
 }
 
-function imprimirPreguntas() {
+function imprimirquestions() {
 
-    for (var i = 0; i < numPreguntas; i++) {
+    for (var i = 0; i < numquestions; i++) {
 
-        var tipo = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('tipus')[0].innerHTML;
+        var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('type')[0].innerHTML;
 
         switch (tipo) {
             case "select":
@@ -45,27 +45,27 @@ function imprimirPreguntas() {
     }
 }
 
-function imprimirCorrección() {
+// function imprimirCorrección() {
 
-}
+// }
 
 
 function crearRadio(i) {
 
-    var numSol = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('opcio').length;
+    var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
     var element = document.getElementById("mainform");
 
     element.innerHTML = element.innerHTML + "<br/>";
     var enunciado = document.createElement("label");
     enunciado.setAttribute('class', "enunciado");
     enunciado.setAttribute('for', i);
-    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
     for (var k = 0; k < numSol; k++) {
 
-        var question = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('opcio')[k].innerHTML;
+        var question = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option')[k].innerHTML;
         var radioBut = document.createElement("input");
 
         radioBut.setAttribute("type", "radio");
@@ -81,19 +81,19 @@ function crearRadio(i) {
     }
 }
 function crearCheck(i) {
-    var numSol = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('opcio').length;
+    var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
     var element = document.getElementById("mainform");
     element.innerHTML = element.innerHTML + "<br/>";
     var enunciado = document.createElement("label");
     enunciado.setAttribute('for', i);
     enunciado.setAttribute('class', "enunciado");
-    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
     for (var k = 0; k < numSol; k++) {
 
-        var question = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('opcio')[k].innerHTML;
+        var question = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option')[k].innerHTML;
         var check = document.createElement("input");
 
         check.setAttribute("type", "checkbox");
@@ -109,14 +109,14 @@ function crearCheck(i) {
     }
 }
 function crearText(i) {
-    var numSol = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('opcio').length;
+    var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
     var element = document.getElementById("mainform");
 
     element.innerHTML = element.innerHTML + "<br/>";
     var enunciado = document.createElement("label");
     enunciado.setAttribute('class', "enunciado");
     enunciado.setAttribute('name', i);
-    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
@@ -137,7 +137,7 @@ function imprimirBoton() {
     element.innerHTML = element.innerHTML + "<br/>";
     var textinp = document.createElement('button');
     textinp.setAttribute('type', "button");
-    textinp.setAttribute('onclick', "checkPreguntas()");
+    textinp.setAttribute('onclick', "checkquestions()");
     textinp.innerHTML = "Comprueba tus respuestas!";
     element.appendChild(textinp);
     var corr = document.createElement('div');
@@ -145,13 +145,13 @@ function imprimirBoton() {
     element.appendChild(corr);
 }
 
-function checkPreguntas() {
+function checkquestions() {
     document.getElementById("corr").innerHTML = "<h3>Corrección:</h3><br/>";
     try {
-        var numPreg = xmlDoc.getElementsByTagName('pregunta').length;
+        var numPreg = xmlDoc.getElementsByTagName('question').length;
 
         for (var i = 0; i < numPreg; i++) {
-            var tipo = xmlDoc.getElementsByTagName('pregunta')[i].getElementsByTagName("tipus")[0].innerHTML;
+            var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("tipus")[0].innerHTML;
 
             if (tipo === "select") {
                 checkRadio(i);
@@ -166,15 +166,15 @@ function checkPreguntas() {
         }
     }
     catch (exception) {
-        alert("Debes rellenar todas las preguntas");
+        alert("Debes rellenar todas las questions");
     }
 }
 
 function checkRadio(x) {
     var correcta = xmlDoc.getElementById("lol" + x).getElementsByTagName("resposta")[0].innerHTML;
-    var opcions = document.getElementsByName(x);
+    var optionns = document.getElementsByName(x);
 
-    if (opcions[correcta].checked) {
+    if (optionns[correcta].checked) {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + x + " Correcto" + "<br/></spam>");
     }
     else {
@@ -183,18 +183,18 @@ function checkRadio(x) {
 }
 function checkCheckbox(x) {
     var correctes = xmlDoc.getElementById("lol" + x).getElementsByTagName("resposta")[0].innerHTML.split(",");
-    var opcions = document.getElementsByName(x);
+    var optionns = document.getElementsByName(x);
     var correcta = true;
     for (i = 0; i < correctes.length; i++) {
         correctes[i] = parseInt(correctes[i]);
     }
 
-    for (i = 0; i < opcions.length; i++) {
+    for (i = 0; i < optionns.length; i++) {
 
-        if ((correctes.indexOf(i) != -1) && opcions[i].checked == false) {
+        if ((correctes.indexOf(i) != -1) && optionns[i].checked == false) {
             correcta = false;
         }
-        else if ((correctes.indexOf(i) == -1) && opcions[i].checked == true) {
+        else if ((correctes.indexOf(i) == -1) && optionns[i].checked == true) {
             correcta = false;
         }
     }
@@ -208,7 +208,7 @@ function checkCheckbox(x) {
 function checkText(x) {
 
     var userAns = document.getElementById("text" + x).value;
-    var resp = xmlDoc.getElementsByTagName("pregunta")[x].getElementsByTagName("resposta")[0].innerHTML;
+    var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("resposta")[0].innerHTML;
 
 
     if (resp === userAns) {
