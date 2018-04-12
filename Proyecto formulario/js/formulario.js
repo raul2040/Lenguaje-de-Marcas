@@ -33,7 +33,7 @@ function imprimirquestions() {
             case "select":
                 crearRadio(i);
                 break;
-            case "selectMulti":
+            case "multiple":
                 crearCheck(i);
                 break;
             case "text":
@@ -116,7 +116,7 @@ function crearText(i) {
     var enunciado = document.createElement("label");
     enunciado.setAttribute('class', "enunciado");
     enunciado.setAttribute('name', i);
-    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('title')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
