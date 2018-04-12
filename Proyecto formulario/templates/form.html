@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang=es>
+
+<head>
+    <!-- Encabezado y title -->
+    <title>Test Programaciones Unidas</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Proyecto de lenguaje de marcas (FORMULARIO) uso de HTML/CSS/XML/JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' media='screen and (min-width: 961px)' href='../css/style.css'>
+    <link rel='stylesheet' media='screen and (max-width: 960px)' href='../css/style1.css'>
+    <script src="js/question.js"></script>
+    <script src="../js/alert.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id='container'>
+            <header>
+
+                <div class="navbar">
+                    <ul id="menu">
+                        <li>
+                            <a href="home.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="form.html">Test</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>PROGRAMACIONES UNIDAS</H1>
+                <h3>Prueba de conocimiento</h3>
+                <p>Este test es un filtro ya que en PROGRAMACIONES UNIDAS tenemos una alta demanda y solo pueden entrar personas
+                    que cumplan las cualidades que exigen nuestro centro educativo.</p>
+            </header>
+            <p>
+                <big>Tiempo para realizar el test.</big>
+            </p>
+                <label onclick="intervalo()" id="tiempo">10:00</label>
+            <form id='form'>
+                <!-- Test con diversos tipos de preguntas -->
+                <h3 id='tituloInput'>1</h3>
+                <input id='text1' type='text'>
+                <br>
+                <br>
+                <h3 id='tituloSelect'>2</h3>
+                <select id='sel'>
+                </select>
+                <br>
+                <br>
+                <h3 id='tituloCheckbox'>3</h3>
+                <div id='checkboxDiv'></div>
+                <p id='destacar'>
+                    <b>
+                        <big>Pregunta con más de una posible respuesta correcta</big>
+                    </b>
+                </p>
+                <br>
+                <h3 id='tituloMultiple'>4</h3>
+                <select id='mySel' multiple>
+                </select>
+                <p id='destacar'>
+                    <b>
+                        <big>Utiliza CTRL para seleccionar varias opciones</big>
+                    </b>
+                </p>
+                <p id='tituloRadio'></p>
+                <br>
+                <h3 id='tituloInput2'>6</h3>
+                <input id='num2' type='text'>
+                <br>
+                <h3 id='tituloSelect2'>7</h3>
+                <select id='sel2'>
+                </select>
+                <br>
+                <h3 id='tituloCheckbox2'>8</h3>
+                <div id='checkboxDiv2'></div>
+                <p id='destacar'>
+                    <b>
+                        <big>Pregunta con más de una posible respuesta correcta</big>
+                    </b>
+                </p>
+                <br>
+                <h3 id='tituloMultiple2'>9</h3>
+                <select id='mySel2' multiple>
+                </select>
+                <p id='destacar'>
+                    <b>
+                        <big>Utiliza CTRL para seleccionar varias opciones</big>
+                    </b>
+                </p>
+                <p id='tituloRadio2'></p>
+                <br>
+                <input type='submit' value='Corregir' id='test'>
+            </form>
+            <div id='resultadosDiv'></div>
+        </div>
+        <footer>
+            <!-- Footer describiendo el proyecto y el autor  -->
+            <p>PROYECTO DE LENGUAJE DE MARCAS (FORMULARIO CON XML)
+                <br>
+                <big>Autor: Raúl Fernando Avilés Saltos</big>
+            </p>
+        </footer>
+</body>
+
+</html>
