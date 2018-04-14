@@ -59,7 +59,7 @@ function crearRadio(i) {
     var enunciado = document.createElement("label");
     enunciado.setAttribute('class', "enunciado");
     enunciado.setAttribute('for', i);
-    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('title')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
@@ -87,7 +87,7 @@ function crearCheck(i) {
     var enunciado = document.createElement("label");
     enunciado.setAttribute('for', i);
     enunciado.setAttribute('class', "enunciado");
-    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('text')[0].innerHTML + "<br>";
+    enunciado.innerHTML = i + "." + xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('title')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
@@ -151,7 +151,7 @@ function checkquestions() {
         var numPreg = xmlDoc.getElementsByTagName('question').length;
 
         for (var i = 0; i < numPreg; i++) {
-            var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("tipus")[0].innerHTML;
+            var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
 
             if (tipo === "select") {
                 checkRadio(i);

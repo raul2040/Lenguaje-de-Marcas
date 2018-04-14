@@ -24,8 +24,7 @@
 				<option>a) Para iterar sobre un objeto o una colección de datos</option>
 				<option>b) Se usa para crear objetos</option>
 				<option>c) Para realizar una acción un número determinado de veces de manera automática</option>
-				<answer>0</answer>
-				<answer>2</answer>
+				<answer>0,2</answer>
     </question>
 
 	<question id="quest4">
@@ -35,8 +34,7 @@
 				<option>b) Funcional </option>
 				<option>c) Orientado a objetos </option>
 				<option>d) Dinámica </option>
-				<answer>1</answer>
-				<answer>2</answer>
+				<answer>1,2</answer>
     </question>
 
 	<question id="quest5">
@@ -72,8 +70,7 @@
 				<option>b) Un leguaje fuertemente tipado</option>
 				<option>c) Un lenguaje interpretado</option>
 				<option>d) Un lenguaje compilado</option>
-				<answer>0</answer>
-				<answer>2</answer>
+				<answer>0,2</answer>
 	</question>
 
 	<question id="quest9">
@@ -83,8 +80,7 @@
 				<option>b) Modos de definir el pseudocódigo de un programa de ordenador</option>
 				<option>c) Paradigmas de programación</option>
 				<option>d) Paradigmas de programación usados por varios lenguajes de programación.</option>
-				<answer>2</answer>
-				<answer>3</answer>
+				<answer>2,3</answer>
 	</question>
 
 	<question id="quest10">
