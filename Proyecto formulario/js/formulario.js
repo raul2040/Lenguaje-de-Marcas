@@ -40,6 +40,12 @@ function imprimirquestions() {
             case "text":
                 crearText(i);
                 break;
+            case "check":
+                crearCheck(i);
+                break;
+            case "radio":
+                crearRadio(i);
+                break;
             default:
                 console.log("default");
         }
