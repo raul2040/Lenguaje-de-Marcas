@@ -1,6 +1,6 @@
 var xmlDoc;
 var numquestions = 0;
-var correccion = "";
+var resultado = 0;
 
 window.onload = function () {
     leerXML();
@@ -185,6 +185,7 @@ function checkRadio(x) {
 
     if (optionns[correcta].checked) {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + x + " Correcto" + "<br/></spam>");
+        console.log("checkRadio respuesta correcta");
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + x + " Incorrecto" + "<br/></spam>");
@@ -209,6 +210,7 @@ function checkCheckbox(x) {
     }
     if (correcta) {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + x + " Correcto" + "<br/></spam>");
+        console.log("checkcheckbox en respuesta correcta");
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + x + " Incorrecto" + "<br/></spam>");
@@ -222,6 +224,7 @@ function checkText(x) {
 
     if (resp === userAns) {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + x + " Correcto" + "<br/></spam>");
+        console.log("chekcText respuesta correcta");
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + x + " Incorrecto" + "<br/></spam>");
