@@ -14,7 +14,7 @@ function leerXML() {
 
             xmlDoc = this.responseXML;
             numquestions = xmlDoc.getElementsByTagName('question').length;
-            
+
             intervalo();
             imprimirquestions();
             imprimirBoton();
@@ -104,6 +104,7 @@ function crearCheck(i) {
         element.appendChild(label);
     }
 }
+
 function crearText(i) {
     var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
     var element = document.getElementById("mainform");

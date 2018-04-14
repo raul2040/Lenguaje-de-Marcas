@@ -19,7 +19,7 @@
     </question>
 
     <question id="quest3">
-		<type>checkbox</type>
+		<type>multiple</type>
 			<title>3.- ¿Para que se usa un bucle en programación?</title>
 				<option>a) Para iterar sobre un objeto o una colección de datos</option>
 				<option>b) Se usa para crear objetos</option>
@@ -64,7 +64,7 @@
 	</question>
 
 	<question id="quest8">
-		<type>checkbox</type>
+		<type>multiple</type>
 			<title>8.- Python es... </title>
 				<option>a) Un lenguaje no tipado</option>
 				<option>b) Un leguaje fuertemente tipado</option>
