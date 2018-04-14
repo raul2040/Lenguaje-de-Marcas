@@ -150,7 +150,6 @@ function imprimirBoton() {
 
 function checkquestions() {
     document.getElementById("corr").innerHTML = "<h3>Corrección:</h3><br/>";
-    try {
         var numPreg = xmlDoc.getElementsByTagName('question').length;
 
         for (var i = 0; i < numPreg; i++) {
@@ -163,15 +162,22 @@ function checkquestions() {
                 checkCheckbox(i);
             }
 
-            else if (tipo = "text") {
+            else if (tipo === "text") {
                 checkText(i);
+            }
+
+            else if (tipo === "check") {
+                checkCheckbox(i);
+            }
+
+            else if (tipo === "radio") {
+                checkRadio(i);
+            }
+            else {
+                alert("Debes rellenar todas las questions");
             }
         }
     }
-    catch (exception) {
-        alert("Debes rellenar todas las questions");
-    }
-}
 
 function checkRadio(x) {
     var correcta = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
