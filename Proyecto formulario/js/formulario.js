@@ -14,7 +14,8 @@ function leerXML() {
 
             xmlDoc = this.responseXML;
             numquestions = xmlDoc.getElementsByTagName('question').length;
-
+            
+            intervalo();
             imprimirquestions();
             imprimirBoton();
         }
@@ -217,4 +218,22 @@ function checkText(x) {
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + x + " Incorrecto" + "<br/></spam>");
     }
+}
+
+function intervalo() {
+    var salida = document.getElementById("tiempo"),
+        minutos = 10,
+        segundos = 0,
+        intervalo = setInterval(function () {
+            if (--segundos < 0) {
+                segundos = 59;
+                minutos--;
+            }
+
+            if (minutos && segundos == 0)
+                clearInterval(intervalo);
+
+
+            salida.innerHTML = minutos + ":" + (segundos < 10 ? "0" + segundos : segundos);
+        }, 1000);
 }
