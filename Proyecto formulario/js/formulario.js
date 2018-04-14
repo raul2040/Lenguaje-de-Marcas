@@ -46,11 +46,6 @@ function imprimirquestions() {
     }
 }
 
-// function imprimirCorrección() {
-
-// }
-
-
 function crearRadio(i) {
 
     var numSol = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('option').length;
