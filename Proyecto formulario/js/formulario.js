@@ -37,7 +37,6 @@ function intervalo() {
             }
 
             if (minutos && segundos == 0)
-                checkquestions();
             clearInterval(intervalo);
 
 
