@@ -38,7 +38,7 @@ function intervalo() {
 
             if (minutos && segundos == 0)
                 checkquestions();
-                clearInterval(intervalo);
+            clearInterval(intervalo);
 
 
             salida.innerHTML = minutos + ":" + (segundos < 10 ? "0" + segundos : segundos);
@@ -74,7 +74,7 @@ function imprimirquestions() {
 }
 
 function imprimirBoton() {
-    var element = document.getElementById("mainform"); 
+    var element = document.getElementById("mainform");
     // Obtenemos el formulario
     element.innerHTML = element.innerHTML + "<br/>";
     var textinp = document.createElement('button');
@@ -129,7 +129,7 @@ function crearCheck(i) {
     var enunciado = document.createElement("label");
     enunciado.setAttribute('for', i);
     enunciado.setAttribute('class', "enunciado");
-    enunciado.innerHTML =  xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('title')[0].innerHTML + "<br>";
+    enunciado.innerHTML = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName('title')[0].innerHTML + "<br>";
     element.appendChild(enunciado);
 
 
@@ -182,26 +182,24 @@ function checkquestions() {
 
         var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
 
-        if (tipo === "select") {
-            checkRadio(i);
-        }
-        else if (tipo === "selectMulti") {
-            checkCheckbox(i);
-        }
-
-        else if (tipo === "text") {
-            checkText(i);
-        }
-
-        else if (tipo === "check") {
-            checkCheckbox(i);
-        }
-
-        else if (tipo === "radio") {
-            checkRadio(i);
-        }
-        else {
-            alert("Debes rellenar la pregunta nº " + i);
+        switch (tipo) {
+            case "select":
+                checkRadio(i);
+                break;
+            case "multiple":
+                checkCheckbox(i);
+                break;
+            case "text":
+                checkText(i);
+                break;
+            case "check":
+                checkCheckbox(i);
+                break;
+            case "radio":
+                checkRadio(i);
+                break;
+            default:
+                alert("Debes rellenar la pregunta nº " + i);
         }
     }
 }
@@ -212,7 +210,7 @@ function checkRadio(x) {
 
     if (optionns[correcta].checked) {
         resultado++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas+ " Correcto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
         var incorrectas = 0;
         console.log("checkRadio respuesta correcta");
     }
@@ -221,6 +219,7 @@ function checkRadio(x) {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
     }
 }
+
 function checkCheckbox(x) {
     var correctes = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML.split(",");
     var optionns = document.getElementsByName(x);
@@ -240,30 +239,30 @@ function checkCheckbox(x) {
     }
     if (correcta) {
         correctas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas+ " Correcto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
         var incorrectas = 0;
         console.log("checkcheckbox en respuesta correcta");
     }
     else {
         incorrectas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas+ " Incorrecto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
         var incorrectas = 0;
     }
 }
+
 function checkText(x) {
 
     var userAns = document.getElementById("text" + x).value;
     var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("answer")[0].innerHTML;
 
-
-    if (resp === userAns) {
+    if (resp == userAns) {
         correctas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas+ " Correcto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
         var incorrectas = 0;
     }
     else {
         incorrectas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas+ " Incorrecto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
         var incorrectas = 0;
     }
 }
