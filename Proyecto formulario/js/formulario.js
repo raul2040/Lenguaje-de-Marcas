@@ -183,24 +183,22 @@ function checkquestions() {
     for (var i = 0; i < numquestions; i++) {
 
         var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
-        console.log(tipo);
-        let x = 1;
-        x+=i;
+        console.log(i);
         switch (tipo) {
             case "select":
-                checkRadio(x);
+                checkRadio(i);
                 break;
             case "multiple":
-                checkCheckbox(x);
+                checkCheckbox(i);
                 break;
             case "text":
-                checkText(x);
+                checkText(i);
                 break;
             case "check":
-                checkCheckbox(x);
+                checkCheckbox(i);
                 break;
             case "radio":
-                checkRadio(x);
+                checkRadio(i);
                 break;
             default:
                 alert("Debes rellenar la pregunta nº " + i);
@@ -209,6 +207,7 @@ function checkquestions() {
 }
 
 function checkRadio(x) {
+
     var correctas = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
     var options = document.getElementsByName(x);
 
@@ -225,6 +224,7 @@ function checkRadio(x) {
 }
 
 function checkCheckbox(x) {
+
     console.log("ha entrado en el CHECKBOX");
     var correctasectes = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML.split(",");
     var optionns = document.getElementsByName(x);
@@ -256,7 +256,6 @@ function checkCheckbox(x) {
 }
 
 function checkText(x) {
-
     var userAns = document.getElementById("text" + x).value;
     var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("answer")[0].innerHTML;
 
