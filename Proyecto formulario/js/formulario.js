@@ -183,6 +183,7 @@ function checkquestions() {
     for (var i = 0; i < numquestions; i++) {
 
         var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
+        console.log(i);
         switch (tipo) {
             case "select":
                 checkRadio(i);
@@ -207,6 +208,7 @@ function checkquestions() {
 
 function checkRadio(x) {
     x++;
+    console.log(i);
     var correctas = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
     var options = document.getElementsByName(x);
 
@@ -255,7 +257,7 @@ function checkCheckbox(x) {
 }
 
 function checkText(x) {
-    x++;
+    console.log(x);
     var userAns = document.getElementById("text" + x).value;
     var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("answer")[0].innerHTML;
 
