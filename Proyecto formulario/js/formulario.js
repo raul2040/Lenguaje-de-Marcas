@@ -209,11 +209,11 @@ function checkRadio(x) {
 
     if (options[correcta].checked) {
         resultado++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + resultado + " Correcto" + "<br/></spam>");
         console.log("checkRadio respuesta correcta");
     }
     else {
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + resultado + " Incorrecto" + "<br/></spam>");
     }
 }
 
@@ -237,11 +237,11 @@ function checkCheckbox(x) {
 
     if (correcta) {
         resultado++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + resultado + " Correcto" + "<br/></spam>");
         console.log("checkcheckbox en respuesta correcta");
     }
     else {
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>"  + resultado + " Incorrecto" + "<br/></spam>");
     }
 }
 
@@ -252,9 +252,9 @@ function checkText(x) {
 
     if (resp == userAns) {
         resultado++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + resultado + " Correcto" + "<br/></spam>");
     }
     else {
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
+        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + resultado + " Incorrecto" + "<br/></spam>");
     }
 }
