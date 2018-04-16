@@ -207,7 +207,7 @@ function checkquestions() {
 }
 
 function checkRadio(x) {
-
+    x++;
     var correctas = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
     var options = document.getElementsByName(x);
 
@@ -224,7 +224,7 @@ function checkRadio(x) {
 }
 
 function checkCheckbox(x) {
-
+    x++;
     console.log("ha entrado en el CHECKBOX");
     var correctasectes = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML.split(",");
     var optionns = document.getElementsByName(x);
@@ -256,6 +256,7 @@ function checkCheckbox(x) {
 }
 
 function checkText(x) {
+    x++;
     var userAns = document.getElementById("text" + x).value;
     var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("answer")[0].innerHTML;
 
