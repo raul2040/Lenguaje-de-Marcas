@@ -180,25 +180,27 @@ function crearText(i) {
 function checkquestions() {
     document.getElementById("correctas").innerHTML = "<h3>correctasección:</h3><br/>" + correctas;
 
-    for (var i = 1; i < numquestions; i++) {
+    for (var i = 0; i < numquestions; i++) {
 
         var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
-        console.log(i);
+        let x = i;
+        x++;
+
         switch (tipo) {
             case "select":
-                checkRadio(i);
+                checkRadio(x);
                 break;
             case "multiple":
-                checkCheckbox(i);
+                checkCheckbox(x);
                 break;
             case "text":
-                checkText(i);
+                checkText(x);
                 break;
             case "check":
-                checkCheckbox(i);
+                checkCheckbox(x);
                 break;
             case "radio":
-                checkRadio(i);
+                checkRadio(x);
                 break;
             default:
                 alert("Debes rellenar la pregunta nº " + i);
