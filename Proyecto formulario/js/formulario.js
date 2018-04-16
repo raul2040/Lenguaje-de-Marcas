@@ -184,7 +184,8 @@ function checkquestions() {
 
         var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
         console.log(tipo);
-        let x = i++;
+        let x = 1;
+        x+=i;
         switch (tipo) {
             case "select":
                 checkRadio(x);
@@ -208,10 +209,10 @@ function checkquestions() {
 }
 
 function checkRadio(x) {
-    var correctasecta = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
+    var correctas = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
     var options = document.getElementsByName(x);
 
-    if (options[correctasecta].checked) {
+    if (options[correctas].checked) {
         correctas++;
         document.getElementById("correctas").innerHTML = document.getElementById("correctas").innerHTML + ("<spam style='color: green;'>" + correctas + " correctasecto" + "<br/></spam>");
         console.log("checkRadio respuesta correctasecta");
@@ -224,6 +225,7 @@ function checkRadio(x) {
 }
 
 function checkCheckbox(x) {
+    console.log("ha entrado en el CHECKBOX");
     var correctasectes = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML.split(",");
     var optionns = document.getElementsByName(x);
     var correctasecta = true;
