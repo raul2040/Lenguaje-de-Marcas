@@ -238,12 +238,10 @@ function checkCheckbox(x) {
     if (correcta) {
         resultado++;
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
-        var incorrectas = 0;
         console.log("checkcheckbox en respuesta correcta");
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
-        var incorrectas = 0;
     }
 }
 
