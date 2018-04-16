@@ -280,10 +280,11 @@ function checkCheckbox(x) {
     for (var z = 0, length = radios.length; z < length; z++) {
         var preguntaSel = radios[z].getAttribute("value");
         if (xmlDoc.getElementsByTagName("pregunta")[x].getElementsByTagName("respuesta")[preguntaSel].getAttribute("correcto")) {
-            contCorrectas += 1;
+            resultado += 1;
         }
 
     }
+
     /*Comprobamos cuantas respuestas correctas ha seleccionado el usuario*/
     for (var z = 0, length = radios.length; z < length; z++) {
 
@@ -292,6 +293,7 @@ function checkCheckbox(x) {
             var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("options")[preguntaSel].getAttribute("correcto");
 
             if (resp) {
+                console.log("ha entrado en checkCheckBox, respuesta correcta");
                 document.getElementById("corr" + x).style.backgroundColor = "#00cc00";
                 resultado++;
 
@@ -309,13 +311,11 @@ function checkCheckbox(x) {
     }
 
     function checkText(x) {
-        try {
-            var userAns = document.getElementById(x + "text").value;
-        } catch (e) {
-        }
-        var resp = xmlDoc.getElementsByTagName("quesiton")[x].getElementsByTagName("options")[0].innerHTML;
+        var userAns = document.getElementById(x + "text").value;
+        var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("options")[0].innerHTML;
 
         if (resp == userAns) {
+            console.log("ha entrado en checkText, respuesta correcta");
             document.getElementById("corr" + x).style.backgroundColor = "#00cc00";
             resultado++;
 
@@ -336,6 +336,7 @@ function checkCheckbox(x) {
                 var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("options")[preguntaSel].getAttribute("correcto");
 
                 if (resp) {
+                    console.log("ha entrado en checkSelect, respuesta correcta");
                     document.getElementById("corr" + x).style.backgroundColor = "#00cc00";
                     resultado++;
                 }
@@ -346,5 +347,4 @@ function checkCheckbox(x) {
             }
         }
     }
-    console.log(resultado);
 }
