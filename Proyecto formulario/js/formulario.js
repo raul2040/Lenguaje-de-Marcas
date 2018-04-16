@@ -178,7 +178,8 @@ function crearText(i) {
 }
 
 function checkquestions() {
-    document.getElementById("correctas").innerHTML = "<h3>correctasección:</h3><br/>" + correctas;
+    document.getElementById("correctas").innerHTML = "<h3>correctas:</h3><br/>" + correctas;
+    document.getElementById('incorrectas').innerHTML = "<h3>incorrectas:</h3><br/>" + incorrectas;
 
     for (var i = 0; i < numquestions; i++) {
 
@@ -208,7 +209,7 @@ function checkquestions() {
 
 function checkRadio(x) {
     x++;
-    console.log(i);
+    console.log(x);
     var correctas = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
     var options = document.getElementsByName(x);
 
@@ -219,7 +220,7 @@ function checkRadio(x) {
     }
     else {
         incorrectas++;
-        document.getElementById("correctas").innerHTML = document.getElementById("incorrectas").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrectasecto" + "<br/></spam>");
+        document.getElementById("incorrectas").innerHTML = document.getElementById("incorrectas").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrectasecto" + "<br/></spam>");
         console.log("checkRadio respuesta incorrectasecta");
     }
 }
@@ -251,7 +252,7 @@ function checkCheckbox(x) {
     }
     else {
         incorrectas++;
-        document.getElementById("correctas").innerHTML = document.getElementById("incorrectas").innerHTML + ("<spam style='color: red;'>"  + incorrectas + " Incorrectasecto" + "<br/></spam>");
+        document.getElementById("incorrectas").innerHTML = document.getElementById("incorrectas").innerHTML + ("<spam style='color: red;'>"  + incorrectas + " Incorrectasecto" + "<br/></spam>");
         console.log("checkCheckBox respuesta incorrectasecta");
     }
 }
@@ -267,7 +268,7 @@ function checkText(x) {
     }
     else {
         incorrectas++;
-        document.getElementById("correctas").innerHTML = document.getElementById("incorrectas").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrectasecto" + "<br/></spam>");
+        document.getElementById("incorrectas").innerHTML = document.getElementById("incorrectas").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrectasecto" + "<br/></spam>");
         console.log("checkRadio respuesta incorrectasecta");
     }
 }
