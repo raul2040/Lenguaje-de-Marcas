@@ -174,13 +174,12 @@ function crearText(i) {
 }
 
 function checkquestions() {
-    console.log(resultado);
     document.getElementById("corr").innerHTML = "<h3>Corrección:</h3><br/>" + resultado;
 
     for (var i = 0; i < numquestions; i++) {
 
         var tipo = xmlDoc.getElementsByTagName('question')[i].getElementsByTagName("type")[0].innerHTML;
-
+        console.log(tipo);
         switch (tipo) {
             case "select":
                 checkRadio(i);
@@ -204,6 +203,7 @@ function checkquestions() {
 }
 
 function checkRadio(x) {
+    x++;
     var correcta = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
     var options = document.getElementsByName(x);
 
