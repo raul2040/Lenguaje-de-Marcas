@@ -1,0 +1,1 @@
+alert("Las instrucciones son las siguientes: Los campos de seleccionar solo tienen una respuesta correcta, los campos de rellenar solo los has de contestar con un si o no, y los campos de selección múltriple tendran varias respuestas correctas");
