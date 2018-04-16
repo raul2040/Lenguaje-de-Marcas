@@ -214,6 +214,7 @@ function checkRadio(x) {
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + resultado + " Incorrecto" + "<br/></spam>");
+        console.log("checkRadio respuesta incorrecta");
     }
 }
 
@@ -242,6 +243,7 @@ function checkCheckbox(x) {
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>"  + resultado + " Incorrecto" + "<br/></spam>");
+        console.log("checkCheckBox respuesta incorrecta");
     }
 }
 
@@ -256,5 +258,6 @@ function checkText(x) {
     }
     else {
         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + resultado + " Incorrecto" + "<br/></spam>");
+        console.log("checkRadio respuesta incorrecta");
     }
 }
