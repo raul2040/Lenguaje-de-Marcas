@@ -13,7 +13,7 @@
 			<title>2.-  ¿Cual es el lenguaje de programación más usado en la actualidad?</title>
 				<option>a) Python</option>
 				<option>b) C </option>
-				<option>c) Java </option>
+				<option correcto="true">c) Java </option>
 				<option>d) JavaScript</option> 
 				<answer>2</answer>
     </question>
@@ -21,9 +21,9 @@
     <question id="quest3">
 		<type>check</type>
 			<title>3.- ¿Para que se usa un bucle en programación?</title>
-				<option>a) Para iterar sobre un objeto o una colección de datos</option>
+				<option correcto="true">a) Para iterar sobre un objeto o una colección de datos</option>
 				<option>b) Se usa para crear objetos</option>
-				<option>c) Para realizar una acción un número determinado de veces de manera automática</option>
+				<option correcto="true">c) Para realizar una acción un número determinado de veces de manera automática</option>
 				<answer>0,2</answer>
     </question>
 
@@ -31,8 +31,8 @@
 		<type>multiple</type>
 			<title>4.- ¿Python es un lenguaje de programación orientado a que tipo de paradigma?</title>
 				<option>a) Imperativa </option>
-				<option>b) Funcional </option>
-				<option>c) Orientado a objetos </option>
+				<option correcto="true">b) Funcional </option>
+				<option correcto="true">c) Orientado a objetos </option>
 				<option>d) Dinámica </option>
 				<answer>1,2</answer>
     </question>
@@ -42,7 +42,7 @@
 			<title>5.- Int,char,float,string y boolean son:</title>
 				<option>a) Funciones de acceso a datos </option>
 				<option>b) Instrucciones de acceso datos </option>
-				<option>c) Tipos de datos</option>
+				<option correcto="true">c) Tipos de datos</option>
 				<option>d) Sentencias de control</option>
 				<answer>2</answer>
     </question>
@@ -57,7 +57,7 @@
 		<type>select</type>
 			<title>7.- if, else, for y while son </title>
 				<option>a) Funciones de acceso a datos</option>
-				<option>b) Sentencias de control</option>
+				<option correcto="true">b) Sentencias de control</option>
 				<option>c) Tipos de datos</option>
 				<option>d) Las anteriores respuestas no son correctas</option> 
 				<answer>1</answer>
@@ -66,9 +66,9 @@
 	<question id="quest8">
 		<type>check</type>
 			<title>8.- Python es... </title>
-				<option>a) Un lenguaje no tipado</option>
+				<option correcto="true">a) Un lenguaje no tipado</option>
 				<option>b) Un leguaje fuertemente tipado</option>
-				<option>c) Un lenguaje interpretado</option>
+				<option correcto="True">c) Un lenguaje interpretado</option>
 				<option>d) Un lenguaje compilado</option>
 				<answer>0,2</answer>
 	</question>
@@ -78,15 +78,15 @@
 			<title>9.- Imperativo, declarativo y orientado a objetos son</title>
 				<option>a) Modos de compilar el código fuente de un programa de ordenador</option>
 				<option>b) Modos de definir el pseudocódigo de un programa de ordenador</option>
-				<option>c) Paradigmas de programación</option>
-				<option>d) Paradigmas de programación usados por varios lenguajes de programación.</option>
+				<option correcto="true">c) Paradigmas de programación</option>
+				<option correcto="True">d) Paradigmas de programación usados por varios lenguajes de programación.</option>
 				<answer>2,3</answer>
 	</question>
 
 	<question id="quest10">
 		<type>select</type>
 			<title>10.-¿Cuál es el código ASCII decimal de "nueva línea" (line feed)? </title>
-				<option>a) 10 </option>
+				<option correcto="true">a) 10 </option>
 				<option>b) 13</option>
 				<option>c) 32</option>
 				<option>d) Las anteriores respuestas no son correctas</option>

@@ -1,7 +1,6 @@
 var xmlDoc;
 var numquestions = 0;
-var correctas = 0;
-var incorrectas = 0;
+var resultado = 0;
 
 window.onload = function () {
     leerXML();
@@ -37,7 +36,7 @@ function intervalo() {
             }
 
             if (minutos && segundos == 0)
-            clearInterval(intervalo);
+                clearInterval(intervalo);
 
 
             salida.innerHTML = minutos + ":" + (segundos < 10 ? "0" + segundos : segundos);
@@ -203,65 +202,148 @@ function checkquestions() {
     }
 }
 
-function checkRadio(x) {
-    var correcta = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
-    var optionns = document.getElementsByName(x);
+// function checkRadio(x) {
+//     var correcta = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML;
+//     var optionns = document.getElementsByName(x);
 
-    if (optionns[correcta].checked) {
-        resultado++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
-        var incorrectas = 0;
-        console.log("checkRadio respuesta correcta");
-    }
-    else {
-        incorrectas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
-    }
-}
+//     if (optionns[correcta].checked) {
+//         resultado++;
+//         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
+//         var incorrectas = 0;
+//         console.log("checkRadio respuesta correcta");
+//     }
+//     else {
+//         incorrectas++;
+//         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
+//     }
+// }
 
+// function checkCheckbox(x) {
+//     var correctes = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML.split(",");
+//     var optionns = document.getElementsByName(x);
+//     var correcta = true;
+//     for (i = 0; i < correctes.length; i++) {
+//         correctes[i] = parseInt(correctes[i]);
+//     }
+
+//     for (i = 0; i < optionns.length; i++) {
+
+//         if ((correctes.indexOf(i) != -1) && optionns[i].checked == false) {
+//             correcta = false;
+//         }
+//         else if ((correctes.indexOf(i) == -1) && optionns[i].checked == true) {
+//             correcta = false;
+//         }
+//     }
+
+//     if (correcta) {
+//         correctas++;
+//         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
+//         var incorrectas = 0;
+//         console.log("checkcheckbox en respuesta correcta");
+//     }
+//     else {
+//         incorrectas++;
+//         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
+//         var incorrectas = 0;
+//     }
+// }
+
+// function checkText(x) {
+
+//     var userAns = document.getElementById("text" + x).value;
+//     var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("answer")[0].innerHTML;
+
+//     if (resp == userAns) {
+//         correctas++;
+//         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
+//         var incorrectas = 0;
+//     }
+//     else {
+//         incorrectas++;
+//         document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
+//         var incorrectas = 0;
+//     }
+// }
+
+/*corregir preguntas tipo check*/
 function checkCheckbox(x) {
-    var correctes = xmlDoc.getElementById("quest" + x).getElementsByTagName("answer")[0].innerHTML.split(",");
-    var optionns = document.getElementsByName(x);
-    var correcta = true;
-    for (i = 0; i < correctes.length; i++) {
-        correctes[i] = parseInt(correctes[i]);
+
+    var contCorrectas = 0;
+    var contSeleccionadas = 0;
+    var contSelecCorrectas = 0;
+    var isNull = true;
+    var radios = document.getElementsByName(x);
+
+    /*Cuenta la cantidad de respuestas que deben ser seleccionadas*/
+    for (var z = 0, length = radios.length; z < length; z++) {
+        var preguntaSel = radios[z].getAttribute("value");
+        if (xmlDoc.getElementsByTagName("pregunta")[x].getElementsByTagName("respuesta")[preguntaSel].getAttribute("correcto")) {
+            contCorrectas += 1;
+        }
+
+}
+/*Comprobamos cuantas respuestas correctas ha seleccionado el usuario*/
+for (var z = 0, length = radios.length; z < length; z++) {
+
+    if (radios[z].checked) {
+        var preguntaSel = radios[z].getAttribute("value");
+        var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("options")[preguntaSel].getAttribute("correcto");
+
+        if (resp) {
+            document.getElementById("corr" + x).style.backgroundColor = "#00cc00";
+            resultado++;
+
+        }
+        else {
+            document.getElementById("corr" + x).style.backgroundColor = "#cc0000";
+        }
+
+        break;
     }
 
-    for (i = 0; i < optionns.length; i++) {
-
-        if ((correctes.indexOf(i) != -1) && optionns[i].checked == false) {
-            correcta = false;
-        }
-        else if ((correctes.indexOf(i) == -1) && optionns[i].checked == true) {
-            correcta = false;
-        }
-    }
-    if (correcta) {
-        correctas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
-        var incorrectas = 0;
-        console.log("checkcheckbox en respuesta correcta");
-    }
-    else {
-        incorrectas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
-        var incorrectas = 0;
+    if (isNull) {
+        document.getElementById("corr" + x).style.backgroundColor = "#cc0000";
     }
 }
 
 function checkText(x) {
-
-    var userAns = document.getElementById("text" + x).value;
-    var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("answer")[0].innerHTML;
+    try {
+        var userAns = document.getElementById(x + "text").value;
+    } catch (e) {
+    }
+    var resp = xmlDoc.getElementsByTagName("quesiton")[x].getElementsByTagName("options")[0].innerHTML;
 
     if (resp == userAns) {
-        correctas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: green;'>" + correctas + " Correcto" + "<br/></spam>");
-        var incorrectas = 0;
+        document.getElementById("corr" + x).style.backgroundColor = "#00cc00";
+        resultado++;
+
     }
     else {
-        incorrectas++;
-        document.getElementById("corr").innerHTML = document.getElementById("corr").innerHTML + ("<spam style='color: red;'>" + incorrectas + " Incorrecto" + "<br/></spam>");
-        var incorrectas = 0;
+        document.getElementById("corr" + x).style.backgroundColor = "#cc0000";
     }
+}
+
+function checkSelect(x) {
+
+    var option = document.getElementsByName(x);
+
+    for (var z = 0, length = option.length; z < length; z++) {
+        if (option[z].selected)
+        {
+            /*Comprueba si tiene el atributo correcto = true y suma 1 punto*/
+            var preguntaSel = document.getElementById(x + "select").value;
+            var resp = xmlDoc.getElementsByTagName("question")[x].getElementsByTagName("options")[preguntaSel].getAttribute("correcto");
+
+        if (resp) {
+            document.getElementById("corr"+x).style.backgroundColor="#00cc00";
+            resultado++;   
+        }
+        else {
+            document.getElementById("corr"+x).style.backgroundColor="#cc0000";
+        }
+            break;
+        }
+    }
+}
 }
