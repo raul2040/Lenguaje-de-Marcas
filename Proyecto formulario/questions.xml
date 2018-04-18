@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<questions>
-
+<?xml version="1.0"?>
+<!--
+<!DOCTYPE questions SYSTEM "questions_schema.dtd">-->
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
     <question id="quest1">
 		<type>text</type>
 			<title>1.- ¿Java es un lenguaje de programación enfocado en el paradigma orientado en objetos?</title>
 			<answer>si</answer>
     </question>
-
     <question id="quest2">
 		<type>select</type>
 			<title>2.-  ¿Cual es el lenguaje de programación más usado en la actualidad?</title>
@@ -17,7 +16,6 @@
 				<option>d) JavaScript</option> 
 				<answer>2</answer>
     </question>
-
     <question id="quest3">
 		<type>check</type>
 			<title>3.- ¿Para que se usa un bucle en programación?</title>
@@ -26,7 +24,6 @@
 				<option>c) Para realizar una acción un número determinado de veces de manera automática</option>
 				<answer>0,2</answer>
     </question>
-
 	<question id="quest4">
 		<type>multiple</type>
 			<title>4.- ¿Python es un lenguaje de programación orientado a que tipo de paradigma?</title>
@@ -36,7 +33,6 @@
 				<option>d) Dinámica </option>
 				<answer>1,2</answer>
     </question>
-
 	<question id="quest5">
 		<type>radio</type>
 			<title>5.- Int,char,float,string y boolean son:</title>
@@ -46,13 +42,11 @@
 				<option>d) Sentencias de control</option>
 				<answer>2</answer>
     </question>
-
 	<question id="quest6">
 		<type>text</type>
 			<title>6.- ¿Es Git el único sistema de control de versiones existente?</title>
 			<answer>no</answer>
     </question>
-
 	<question id="quest7">
 		<type>select</type>
 			<title>7.- if, else, for y while son </title>
@@ -62,7 +56,6 @@
 				<option>d) Las anteriores respuestas no son correctas</option> 
 				<answer>1</answer>
 	</question>
-
 	<question id="quest8">
 		<type>check</type>
 			<title>8.- Python es... </title>
@@ -72,7 +65,6 @@
 				<option>d) Un lenguaje compilado</option>
 				<answer>0,2</answer>
 	</question>
-
 	<question id="quest9">
 		<type>multiple</type>
 			<title>9.- Imperativo, declarativo y orientado a objetos son</title>
@@ -82,7 +74,6 @@
 				<option>d) Paradigmas de programación usados por varios lenguajes de programación.</option>
 				<answer>2,3</answer>
 	</question>
-
 	<question id="quest10">
 		<type>select</type>
 			<title>10.-¿Cuál es el código ASCII decimal de "nueva línea" (line feed)? </title>
@@ -92,5 +83,4 @@
 				<option>d) Las anteriores respuestas no son correctas</option>
 				<answer>0</answer>
 	</question>
-
 </questions>
