@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<!--
-<!DOCTYPE questions SYSTEM "questions_schema.dtd">-->
-<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
+<DOCTYPE questions SYSTEM "questions_schema.dtd">
+<questions>
     <question id="quest1">
 		<type>text</type>
 			<title>1.- ¿Java es un lenguaje de programación enfocado en el paradigma orientado en objetos?</title>
